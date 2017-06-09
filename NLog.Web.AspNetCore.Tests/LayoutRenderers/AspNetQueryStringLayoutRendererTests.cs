@@ -227,7 +227,7 @@ namespace NLog.Web.Tests.LayoutRenderers
                 dict.Add(tuple.Item1, new StringValues(tuple.Item2));
 
             }
-            IQueryCollection querystringValues = new QueryCollection(dict);
+            var querystringValues = new NameValueCollection(dict);
 
             httpContext.Request.Query.Returns(querystringValues);
 
